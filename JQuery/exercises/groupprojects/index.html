@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Basics</title>
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script type='text/javascript' src='jquery.js'></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script>
+	$(document).ready(function(){
+		$("#red").click(function(){
+		$( "#red" ).append( $( "<div class='box'></div>" ) );
+		})
+
+
+		$("#blue").click(function(){
+		$( "#blue" ).append( $( "<div class='box'></div>" ) );
+		})
+
+
+		$("#yellow").click(function(){
+		$( "#yellow" ).append( $( "<div class='box'></div>" ) );
+		})
+
+
+		$("#purple").click(function(){
+		$( "#purple" ).append( $( "<div class='box'></div>" ) );
+		})
+
+
+		$("#yellow").click(function(){
+		$( "#yellow" ).append( $( "<div class='box'></div>" ) );
+		})
+
+		$( "#togglebt" ).click(function() {
+  			$( ".box" ).toggle( "slow", function() {
+    	// Animation complete.
+  			});
+		});
+
+	})
+
+	</script>
+	
+</head>
+<body>
+
+<div id="wraper">
+	<div id="red" class="boxes" >
+		<button id="bt">Click Herere</button>
+
+	</div>
+	<div id="blue" class="boxes" >
+		<button id="bt">Click Herere</button>
+
+	</div>
+	<div id="yellow" class="boxes" >
+		<button id="bt">Click Herere</button>
+
+	</div>
+	<div id="purple" class="boxes" >
+		<button id="bt">Click Herere</button>
+
+	</div>
+	<div id="togle" class="boxes">
+		<button id="togglebt">Toggle</button>
+
+	</div>
+</div>
+</body>
+</html>

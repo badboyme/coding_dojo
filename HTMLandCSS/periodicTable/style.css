@@ -1,0 +1,59 @@
+
+body {text-align: center;}
+p{	margin: 0;
+	padding: 0;
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+h1 {
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+}
+h2 {
+	margin: 0;
+	padding: 0;
+	font-size: 8px;
+}
+
+#wraper {width: 980px;margin: 0 auto;}
+#wraper ul li {
+	display: inline-block;
+	vertical-align: top;
+	width: 40px;
+	height: 40px;
+}
+
+
+.row2 li:nth-child(n+19):nth-child(-n+19),
+.row3 li:nth-child(n+14):nth-child(-n+19),
+.row4 li:nth-child(n+14):nth-child(-n+19),
+.row5 li:nth-child(n+13):nth-child(-n+19),
+.row6 li:nth-child(n+13):nth-child(-n+19), 
+.row7 li:nth-child(n+13):nth-child(-n+19),
+.row8 li:nth-child(n+13):nth-child(-n+19) { 
+    background: yellow;
+}
+
+.row2 li:nth-child(n+2):nth-child(-n+2),
+.row3 li:nth-child(n+2):nth-child(-n+3),
+.row4 li:nth-child(n+2):nth-child(-n+3),
+.row5 li:nth-child(n+2):nth-child(-n+3),
+.row6 li:nth-child(n+2):nth-child(-n+3),
+.row7 li:nth-child(n+2):nth-child(-n+3), 
+.row8 li:nth-child(n+2):nth-child(-n+3){ 
+    background: lightblue;
+}
+
+.row5 li:nth-child(n+4):nth-child(-n+13),
+.row6 li:nth-child(n+4):nth-child(-n+13),
+.row7 li:nth-child(n+4):nth-child(-n+13),
+.row8 li:nth-child(n+4):nth-child(-n+13) { 
+    background: pink;
+}
+
+.green01 li:nth-child(n+4):nth-child(-n+17) { 
+    background: lightgreen;
+}

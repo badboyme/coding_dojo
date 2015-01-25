@@ -1,0 +1,7 @@
+.boxes {display: inline-block;vertical-align: top;}
+#wraper {width: 980px; margin: 0 auto;}
+.box {width: 100px; height: 50px; border:1px solid black;}
+#red{background-color: red;}
+#blue{background-color: blue;}
+#yellow{background-color: yellow;}
+#purple{background-color: purple;}

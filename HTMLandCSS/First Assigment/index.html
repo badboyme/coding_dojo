@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>The Best Blog Ever</title>
+    <meta name="description" content="This's the description of my blog"/>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="my_javascript_library.js"></script>
+</head>
+<body>
+    <div id="wraper">
+    <header>
+        <div id="logo">
+          <img src="http://www.estebangallego.com/wp-content/uploads/2015/01/Esteban.png" alt="Esteban">	
+        </div>	
+        <div id="Information">
+            <nav>
+                <ul>
+            	   <li>Home</li>
+            	   <li>About</li>
+            	   <li>Contact</li>
+            	   <li>Blog</li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+    <main>
+        <h1>Here's an awesome blog</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus
+        velit lectus, ut congue ligula molestie nec. Fusce a facilisis risus. Nullam
+        id magna semper, semper eros quis, varius velit. Duis sagittis porta enim ac
+        mattis. Cum sociis natoque penatibus et magnis dis parturient montes, nascet
+        ur ridiculus mus. Donec sodales lorem id orci blandit, ac tincidunt lorem po
+        rta. Sed euismod a arcu sed mollis.
+        </p>
+        <p>
+        Maecenas imperdiet risus at nisl aliquet, eu ullamcorper enim imperdiet. Sed
+        id metus consectetur, sollicitudin eros at, dapibus ipsum. Morbi cursus nibh
+        sit amet porta fringilla. Nam egestas nisi dui, a varius lectus egestas non.
+        Nulla facilisi. Donec sed mauris vitae sem volutpat auctor nec eu nisi. Maec
+        enas quis diam consequat, semper felis ullamcorper, mollis nisi. Morbi turpi
+        s nulla, pellentesque sit amet erat eu, pretium sagittis mi. Fusce rhoncus i
+        mperdiet eros, ac porta ligula ullamcorper in. Suspendisse nulla urna, facil
+        is non nunc ut, <a href="http://www.codingdojo.com/">faucibus condimentum leo.</a>
+        </p>
+        <div id="cat-images">
+        <img class="img-thumbnail" src="http://www.dbqhumane.org/dbqhumane/site_files/editor_files/image/image/My_folder/cat%20for%20animal%20surrender%20page.jpg" alt="Test Image">
+        <img class="img-thumbnail" src="http://upload.wikimedia.org/wikipedia/commons/2/22/Turkish_Van_Cat.jpg">
+        </div>
+        <div class="table-responsive">
+        <h2>Here's some information</h2>
+        <table border="1" width="100%" class="table">
+        	<thead>
+        		<tr>
+        			<td>Name</td>
+        			<td>Color</td>
+        			<td>Age</td>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		<tr>
+        			<td>Pinki</td>
+        			<td>Grey</td>
+        			<td>5 years</td>
+        		</tr>
+        		<tr>
+        			<td>Lazy</td>
+        			<td>White</td>
+        			<td>6 months</td>
+        		</tr>
+        	</tbody>
+        </table>
+        </div>
+
+
+        <div class="well">
+        <h3>Simple Survey</h3>
+        <form action="process.php" method="post">
+            <div class="form-group">
+            <label>
+                First Name:<input type="text" class="form-control" name="first_name">
+            </label>
+            </div>
+            <div class="form-group">
+            <label>
+                Last Name:<input type="text" class="form-control" name="last_name">
+            </label>
+            </div>
+            <div class="form-group">
+            <label>
+                Email:<input type="text" class="form-control" name="email">
+            </label>
+            </div>
+            <p>Which cat do you like the most?</p>
+            <div class="form-group">
+            <label>
+                <input type="radio" name="gender" value="male"> Pinki
+            </label>
+            </div>
+            <div class="form-group">
+            <label>
+                <input type="radio" name="gender" value="female"> Lazy
+            </label>
+            </div>
+            <p>Which car would you adopt?</p>
+            <div class="form-group">
+            <label>
+                <input type="checkbox" class="checkbox" name="color" value="blue">Pinki
+            </label>
+            </div>
+            <div class="form-group">
+            <label>
+                <input type="checkbox" class="checkbox" name="color" value="green">Lazy
+            </label>
+            </div>
+            <div class="form-group">
+            <p>Say a few words about your favorite cat:</p>
+            <textarea name="description" class="form-control"></textarea>
+            </div>
+            
+           <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        </div>
+    </main>
+    <footer>	
+    © Esteban Gallego
+    </footer>
+    </div>
+</body>
+</html>

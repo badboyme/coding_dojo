@@ -1,0 +1,13 @@
+#wraper{
+	width: 980px; margin: 0 auto;
+}
+.ninjaImg{
+	display: inline-block;
+	vertical-align: top;
+	border: 1px solid black;
+	margin: 5px;
+	padding: 5px;
+	width: 220px;
+	height: 220px;
+}
+.ninjaImg img {width: 90%;}

@@ -1,0 +1,10 @@
+/*addClass*/
+.element{
+	width: 100%;
+	border-bottom: 1px black solid;
+	position:block;
+}
+.addClassJQ{
+	color:red;
+	font-size: 20px;
+}

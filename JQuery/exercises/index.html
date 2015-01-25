@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Test</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			var consoleTest = 'Show error in console';
+			console.log(consoleTest);
+
+			//effect methods
+
+			$('a').click(function(){
+				alert('Hello');
+			})
+
+			$('#hide').click(function(){
+				$('p').hide();
+			})
+
+			$('#show').click(function(){
+				$('p').show();
+			})
+
+			$('h4').click(function(){
+				alert('Click on h4');
+			})
+
+			//manipulation methods - add either text or HTML
+
+			$('h2').hover(function(){
+				$('h3').text('Element in h3 has been replaced!');
+				},function(){$('h3').text('Hello');
+			})
+
+			$('.append').click(function(){
+				$('.appendResult').append('<h4>Appending Content</h4><hr>');
+			})
+
+			//css method
+
+			$('button').click(function(){
+				$('button').css('background-color','red');
+			})
+
+			//getter function gets the value something
+
+			 $('#button').click(function(){
+			 	var myText = $('#myParagraph').text();
+			 	alert(myText);
+			 })
+
+			//A setter function sets the value of something
+
+			$('#button2').click(function(){
+				$('#myParagraph2').text('See how .text() works as a setter');
+			})
+
+		});
+</script>
+</head>
+<body>
+<button id="hide">Hide Content</button>
+<button id="show">Show Content</button>
+<div class="appendResult"></div>
+<p>test 1</p>
+<p>test 2</p>
+<p>test 3</p>
+<h4>Test Alert box</h4>
+<h2>When I hover this element the text in "h2" will change</h2>
+<h3>i'm in the muon</h3>
+<a href="#">Link</a><br>
+<hr>
+<button id="button">Get text</button>
+<p id="myParagraph">Put this text in an alert after click in button</p>
+<hr>
+
+<button id="button2">Get text</button>
+<p id="myParagraph2">Put this text in an alert after click in button</p>
+<hr>
+<button class="append">Appending Content</button>
+<hr>
+<div class="appendResult"></div>
+<hr>
+<a href="http://tablesorter.com/">http://tablesorter.com/</a>
+<a href="http://onehackoranother.com/projects/jquery/tipsy/">http://onehackoranother.com/projects/jquery/tipsy/</a>
+<a href="http://projects.nickstakenburg.com/tipped">http://projects.nickstakenburg.com/tipped</a>
+Necessary tags
+.hide
+</body>
+</html>

@@ -1,0 +1,24 @@
+/*Global*/
+a {color: blue;}
+a:hover {color: red}
+/*Wrapee*/
+#wraper {width: 970px;margin: 0 auto;}
+/*Header*/
+#header {padding: 1px;margin-bottom: 2%;}
+#header h1 {margin-left: 1%;}
+/*Content*/
+#content {background-color:rgb(158, 158, 158);width: 68%;}
+#content ul li {margin-bottom: 3%;}
+/*Sidebar*/
+#sidebar {width: 25%;margin-right: 2%;}
+#sidebar a {text-decoration: none;}
+/*Footer*/
+#footer {margin-top: 2%;padding: 1%;}
+/*Multiple divs*/
+#sidebar, #content {
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 1%;
+}
+#header, #sidebar, #footer {background-color: rgb(213, 213, 213)}
+#header, #sidebar, #content, #footer {border-radius: 10px;}

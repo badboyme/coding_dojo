@@ -1,0 +1,22 @@
+/*Global*/
+a, h1, h2, h3 {color: #A50505;}
+/*Header*/
+#header {background-color: #6b0000;}
+#logo {width: 670px;}
+#header-info {color: white;}
+#search-box, #header-info {margin-top: 10px;}
+#header-info a {color: rgb(208, 208, 0);}
+#header-info, #logo {display: inline-block;vertical-align: top;}
+/*Navigation*/
+#nav ul {list-style-type: none; display: inline-flex;}
+#nav ul li {margin-right: 20px;padding-right: 20px;border-right: 1px grey solid;}
+#nav ul li:last- {}
+#nav a {text-decoration: none;color: rgb(74, 73, 73);font-weight: bold;}
+/*Wraper*/
+#wraper {width: 970px;margin: 0 auto;}
+/*Content*/
+#sidebar {width: 230px;margin-top: 2%;margin-right: 15px;}
+#content {width: 700px;}
+#sidebar, #content {display: inline-block;vertical-align: top;}
+/*Multiple Div*/
+#nav, #sidebar {background-color: rgb(213, 213, 213);border: 1px solid grey;}
