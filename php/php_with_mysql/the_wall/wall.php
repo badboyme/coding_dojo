@@ -9,19 +9,25 @@ var_dump($_SESSION);
 <!DOCTYPE html>
 <html>
 <head>
- <meta charset="utf-8">
-  <title>The Wall</title>
-  <meta name="description" content="">
-  <meta name="Esteban Gallego" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
+	<meta charset="utf-8">
+	<title>The Wall</title>
+	<meta name="description" content="">
+	<meta name="Esteban Gallego" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 <div class="row" id="header">
     <div class="four columns">The Wall</div>
-    <div class="eight columns">Login</div>
+    <div class="eight columns">
+    	<?php 
+			// session_start();
+			echo "Hello {$_SESSION['first_name']}! ";
+			echo "<a href='login_process.php'>LOG OFF </a>";
+		?>
+    </div>
 </div>
 <div class="container">
 	<div class="twelve columns post">
