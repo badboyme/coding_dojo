@@ -32,11 +32,11 @@
 
 		if(preg_match("/^[a-zA-Z][a-zA-Z -]+$/", $_POST['first_name']) === 0)
 		{
-			$_SESSION['errors'][] = 'First name should be letters';
+			$_SESSION['errors'][] = 'First name should be letters only!';
 		}
 		if(preg_match("/^[a-zA-Z][a-zA-Z -]+$/", $_POST['last_name']) === 0)
 		{	
-			$_SESSION['errors'][] = 'Last name should be letters';
+			$_SESSION['errors'][] = 'Last name should be letters only!';
 		}
 
 		if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) 
