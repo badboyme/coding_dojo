@@ -1,9 +1,28 @@
-INSERT INTO users (first_name, last_name, password, email, created_at, updated_at) VALUES ('Esteban', 'Gallego', '1111111111', 'egallego00@gmail.com', NOW(), NOW());
-SELECT * FROM users;
-INSERT INTO users (first_name, last_name, password, email, created_at, updated_at) VALUES ('Esteban', 'Gallego', '1111111111', 'egallego00@gmail.com', NOW(), NOW())
-SELECT * FROM users;
-SELECT * FROM users WHERE users.password = '1111111111' AND users.email = 'egallego00@gmail.com';
-SELECT * FROM users WHERE users.password = 'cvbsdfbsdf' AND users.email = 'egallego00@gmail.com';
+INSERT INTO messages (message, created_at, updated_at) 
+VALUES ('camilo', NOW(), NOW());
+
 
 SELECT * FROM messages;
-INSERT INTO messages (postMessage, created_at, updated_at) VALUES ('sfda', NOW(), NOW());
+SELECT * FROM users;
+
+
+INSERT INTO users (first_name, last_name, password, email, created_at, updated_at) 
+VALUES ('camilo', 'Gafsdfdsafllego', '1111111111', 'egallefasdfsdafgo00@gxxxxmail.com', NOW(), NOW());
+
+
+
+INSERT INTO messages (users_id, message, created_at, updated_at) 
+VALUES ( '1', 'fasdfadsfasd', NOW(), NOW());
+
+INSERT INTO users (first_name, last_name, password, email, created_at, updated_at) 
+VALUES ('camilo', 'Gafsdfdsafllego', '1111111111', 'egallefasdfsdafgo00@gxxxxmail.com', NOW(), NOW());
+
+INSERT INTO comments (messages_id, comment, created_at, updated_at) VALUES ('1', 'testisn', NOW(), NOW());
+select * from comments;
+
+
+
+INSERT INTO messages (users_id, message, created_at, updated_at) VALUES ('1', 'fasdfdasfadsf', NOW(), NOW());
+
+
+INSERT INTO messages (message, created_at, updated_at) VALUES ('fasdfadsfasd', NOW(), NOW());

@@ -6,23 +6,37 @@
 	// echo "Session";
 	// var_dump($_SESSION);
 	// session_destroy();
-	if(isset($_POST['action']) && $_POST['action'] == 'register')
+	if(isset($_POST['action']) && $_POST['action'] && $_POST['action'] == 'register')
 	{	
 		//call register_user function
 		register_user($_POST); // use the actual post
 	}
 
-	elseif (isset($_POST['action']) && $_POST['action'] == 'login') 
+	elseif (isset($_POST['action']) && $_POST['action'] && $_POST['action'] == 'login') 
 	{	
 		//call login_user function
 		login_user($_POST); // use the actual post
 
 	}
+
+	elseif (isset($_POST['action']) && $_POST['action'] && $_POST['action'] == 'postMessage') 
+	{
+		post_message($_POST);
+	}
+
+	elseif (isset($_POST['cmid'])) 
+	{  
+		 // echo "working";
+		 // var_dump($_POST);
+		commentInPost($_POST);
+	}
+
 	else // malicious navigation to login_process.php OR someone is trying to log out!
 	{
 		session_destroy();
 		header('location: index.php');
 		die();
+		
 	}
 
 	function register_user($post) // just parameter called post
@@ -55,6 +69,7 @@
 		// ---------------------------End of validation checks
 		if (count($_SESSION['errors']) > 0) 
 		{
+
 			header('location: index.php');
 			die();
 		}
@@ -66,7 +81,7 @@
 			
 			$_SESSION['success_message'] = 'User successfully created!';
 			header('location: wall.php');
-			die();
+			
 		}
 	}
 
@@ -79,6 +94,7 @@
 		if (count($user) > 0 ) 
 		{
 			$_SESSION['user_id'] = $user[0]['id'];
+			$_SESSION['messages_id'] = $user[0]['id'];
 			$_SESSION['first_name'] = $user[0]['first_name'];
 			$_SESSION['logged_in'] = TRUE;
 			header('location: wall.php');
@@ -88,6 +104,51 @@
 		{
 			$_SESSION['errors'][] = "Can't find a user with those credentials!";
 			header('location: index.php');
+			die();
+		}
+	}
+
+	function post_message($post)
+	{
+
+		if (empty($_POST['postMessage'])) 
+		{
+			$_SESSION['postError'] = "You didn't post anything!";
+			header('location: wall.php');
+			die();
+		}
+		else
+		{
+			$query = "INSERT INTO messages (users_id, message, created_at, updated_at)
+					  VALUES ('{$_SESSION['user_id']}', '{$post['postMessage']}', NOW(), NOW())";
+			run_mysql_query($query);
+			header('location: wall.php');
+			die();
+		}
+
+	}
+
+	function commentInPost($post)
+	{
+		if (empty($_POST['commentInPost'])) 
+		{
+			$_SESSION['commentError'] = "You didn't comment anything!";
+			
+			header('location: wall.php');
+			die();
+		}
+		else
+		{
+			$query = "INSERT INTO comments (comment, created_at, updated_at, messages_id, users_id)
+					  VALUES ('{$post['commentInPost']}', NOW(), NOW(), '{$_POST['cmid']}', '{$_SESSION['user_id']}')";
+			// echo $query;
+			// echo "<br />Session";
+			// var_dump($_SESSION);
+			// echo "Post";
+			// var_dump($_POST);
+
+			run_mysql_query($query);
+			header('location: wall.php');
 			die();
 		}
 	}

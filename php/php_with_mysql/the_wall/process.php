@@ -25,12 +25,11 @@ function post_message($post)
 	}
 	else
 	{
-		echo "message send";
-		// $query = "INSERT INTO messages (message, created_at, updated_at)
-		// 		  VALUES ('{$post['postMessage']}', NOW(), NOW())";
-		// echo $query;
+		$query = "INSERT INTO messages (message, created_at, updated_at)
+				  VALUES ('{$post['postMessage']}', NOW(), NOW())";
+		echo $query;
 	}
-	// post validation
+
 }
 
 
