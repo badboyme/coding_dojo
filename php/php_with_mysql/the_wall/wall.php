@@ -8,9 +8,6 @@ require('connection.php');
 
 function comment_function (){
 
-
-
-
 }
 
 ?>
@@ -39,6 +36,10 @@ function comment_function (){
 			else
 			{
 				echo "Insecure access bug Fix this bug";
+				if (!isset($_SESSION)) {
+				header('location: index.php');
+				die();
+				}
 				// header('location: index.php');
 				// die();
 			}
@@ -58,7 +59,7 @@ function comment_function (){
 			?>
 			<textarea class="u-full-width" placeholder="Whats in your mine?" name="postMessage"></textarea>
 			<input type="hidden" name="action" value="postMessage">
-			<input type="submit" class="button-primary" value="Post a massage">
+			<input type="submit" class="button-primary" value="Post">
 		</form>
 		<?php
 		$query = "SELECT messages.*, users.first_name, users.last_name FROM messages LEFT JOIN users ON messages.users_id = users.id";
@@ -80,26 +81,34 @@ function comment_function (){
 					unset($_SESSION['commentError']);
 				}
 		?>
-		<?php $query ='SELECT * FROM comments'; 
+		<?php $query ='SELECT comments.*, comments.comment, comments.id, users.first_name, users.last_name 
+			FROM comments LEFT 
+			JOIN users ON users.id = comments.users_id
+			JOIN messages ON messages.id = comments.messages_id'; 
+		// echo $query;
 		$comments = fetch_all($query);
 		// var_dump($comments);
 		?>	
 
+		<?php 
+				krsort($comments);
+				foreach ($comments as $key => $value) 
+				{	
+					echo "<b>Comment by: {$value['first_name']} {$value['last_name']} - {$value['created_at']} </b>  <br />{$value['comment']}<br />" ;
+					// echo "<b>Comment - {$comments} </p>"; 
+				}	
+					// echo "<b>Comment - {$comments[message]} </p>"; 
+				
+				// var_dump($comments);
+			?>
+		
+		
 			<form action='login_process.php' method='post'>
 			<textarea class='u-full-width' placeholder='Comment about the post!' name='commentInPost' ></textarea>
 			<input type='submit' class='button-primary' value='Comment'>
 			<input type='hidden' name='cmid' value='<?=$messageId?>'>
 			</form>
-
-			<?php foreach ($comments as $key => $value) 
-			{	
-				$mycomment = ($value['comment']);
-			}	
-				echo "<b>Comment - {$mycomment} </p>"; 
-			?>
-		
-		<?php } ?>
-		 
+		 <?php } ?>
 
 	</div>
 </div>
