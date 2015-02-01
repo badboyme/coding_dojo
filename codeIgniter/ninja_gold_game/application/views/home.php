@@ -5,9 +5,11 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="input-group">
-	          <div class="input-group-addon">Your Gold $</div>
 	          <div class="input-group-addon">
-	          	<b> <?=$this->session->userdata('goldCounter') ?></b>
+	          	<h4 class="text-primary">Your Gold $</h4>
+	          </div>
+	          <div class="input-group-addon">
+	          	<h4 class="text-success"><?=$this->session->userdata('goldCounter') ?></h4>
 	          </div>
 	        </div>
 		</div>
@@ -47,15 +49,25 @@
  		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-4"><h5>Activities</h5></div>
-	</div>
- 	<div class="row highlight">
+		<form action="/process_money/reset">
+ 		<input type="hidden" name="reset">
+ 		<input type="submit" value="Play Again" class="btn btn-primary">
 
- 		<p class="text-muted">test</p>
-		<p class="text-primary">test</p>
-		<p class="text-success">test</p>
-		<p class="text-info">test</p>
-		<p class="text-warning">test</p>
-		<p class="text-danger">test</p>
+ 	</form>		
+	<div class="col-md-4">
+			<h4>Activities</h4></div>
+		</div>
+	<hr>
+ 	<div class="row highlight">	
+		<?php // note = fix bug when starting session.
+			$Activity = $this->session->userdata('LogMessages');
+			krsort($Activity);
+			foreach ($Activity as $value) 
+			{
+				echo $value ;	
+			
+		} ?>
+
+
 	</div> 
 </div>
