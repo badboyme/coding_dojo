@@ -1,0 +1,67 @@
+#container {width: 980px;margin: 0 auto;}
+/*Header*/
+# header {
+  display: block;
+  }
+/**/
+h1.logo{
+    display: inline-block;
+    width: 167px;
+    height: 64px;
+    background: url("../images/logo.png") no-repeat;
+
+}
+
+span.logo {
+    display: none;
+}
+
+ul.nav {
+    display: inline-block;
+    vertical-align:bottom;
+    margin-right: 5px;
+
+}
+.inline {display: inline-block;vertical-align: top;}
+
+.nav ul li {
+    display: inline;
+}
+
+#title{
+    display: block;
+    border-top: 5px solid #902841;
+
+}
+
+#slide{
+
+}
+
+#feature{
+
+}
+
+#mod1 {
+
+}
+
+#mod2 {
+
+}
+
+#mod3 {
+
+}
+
+#mod4 {
+
+}
+
+#mod5 {
+
+}
+
+#footer {
+    
+}

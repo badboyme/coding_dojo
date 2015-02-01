@@ -1,11 +1,31 @@
 <h2>Object Oriented Programing Overview</h2>
-
-Objects and Classes<br>
-Class Structure<br>
-Instantiation<br>
-Properties<br>
-Methods<br>
-Construct<br>
+<b>Basic</b>
+	<ol>
+	<li>Objects and Classes</li>
+	<li>Class Structure</li>
+	<li>Instantiation</li>
+	<li>Properties</li>
+	<li>Methods</li>
+	<li>Construct</li>
+</ol>
+<b>Advance</b>
+<ol>
+	<li>Procedural vs OOP</li>
+	<li>Inheritance</li>
+	<li>Overwriting</li>
+	<li>Preserving</li>
+	<li>Visibility</li>
+		<ul>
+			<li>Protected</li>
+			<li>Private</li>
+		</ul>
+</ol>
+<b>Inheritance</b>
+<p>Extending an existing class.</p>
+<b>Overwriting</b>
+<p>create a property or method that takes place of existing one in the parent class you would like to overwrite.</p>
+<b>Preserving</b>
+<p><strong>scope resolution operator</strong> = parent::__construct(instance) this call the parent__contruct() method. </p>
 
 <?php 
 echo "<hr>";
@@ -89,8 +109,45 @@ $new_person1 = new Person('John', 'Doe');
 var_dump($new_person1);
 
 
+// inheritance =  extending an existing class
+echo "<hr>";
+echo "<h2>Advance</h2>";
 
+class MyFirstClassAdvance
+{
+	public $property1 = "i'm the first property! wohooo";
+	public function __construct($instance)
+	{
+		echo "I'm getting called for the object: " .$instance;
+	}
+	public function set_property1()
+	{
+		$this->property1 = $property1();
+	}
+	public function get_property1()
+	{
+		return $this->property1;
+	}
+}
 
+/**
+* extension ------------------------------ 
+*/
+class MyOtherClass extends MyFirstClassAdvance
+{
+	
+	public function new_method()
+	{
+		echo "NEW METHOD inside extended class";
+	}
+}
+// this call the __construct() method in MyFirstClassAdvance so we have to pass in a value.
+
+$obj = new MyotherClass('instance of child class = MY OTHERCLASS -');
+$obj->new_method(); // we can call methods within our own class.
+$obj->get_property1(); // as well as call methods in our parent class.
+echo "<hr>";
+echo "<h2>Overwriting</h2>";
 
 
 
