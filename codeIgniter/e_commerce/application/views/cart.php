@@ -9,16 +9,28 @@
 		</tr>
 	
 		<tr>
-			<td><?=$this->session->userdata('quantity') ?></td>
-			<td><?php echo $productById['description']; ?></td>
-			<td><?php echo $productById['price']; ?></td>
-			<td><input type="submit" name="delete" value="Delete"  class="btn btn-danger"> </td>
-		</tr>
+		<?php foreach ($cart as $value) 
+		{ 
+			?>
+			<td><?=$value['quantity']?></td>
+			<td><?=$value['description']?></td>
+			<td><?=$value['price']?></td>
+		<form action="/main/delete" method="post">
+			<input type="hidden" name="delete" value="<?=$value['order_id']?>">
+			<td><input type="submit" class="btn btn-danger" value="Delete"></td>
+		</form>
+		</tr> 
+		<?php } ?>
+		<?php 	
+			$sum = $value['price'] * $value['quantity'];
+			$total = $sum + $sum;
+		?>
 		
 	</table>
-	<h3>Total  = $ 20</h3>
+	<h3>Total  = $ <?=$total ?></h3>
+	
 
-	<form action="/main/check_out" method="post">
+<!-- 	<form action="/main/check_out" method="post">
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Name</label>
 		    <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
@@ -32,5 +44,5 @@
 		    <input type="text" name="card" class="form-control" placeholder="Credit card">
 		  </div>
 		  <button type="submit" class="btn btn-danger">Check out</button>
-	</form>
+	</form> -->
 </div>

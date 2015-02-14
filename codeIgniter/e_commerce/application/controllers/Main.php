@@ -15,11 +15,6 @@ class Main extends CI_Controller {
 		$this->load->view('templates/header', $data);
 		$this->load->model('TalkToDb');
 		$getProducts['showAll'] = $this->TalkToDb->get_products();
-
-		// $this->load->model('TalkToDatabase');
-		// $userId = $this->TalkToDatabase->get_login_id($email);
-
-		// var_dump($getProducts);
 		$this->load->view('products', $getProducts);
 		$this->load->view('templates/footer');
 		// $this->session->sess_destroy();
@@ -29,30 +24,41 @@ class Main extends CI_Controller {
 
 		$data['title'] = 'Cart';
 		$this->load->view('templates/header', $data);
+
 		$this->load->model('TalkToDb');
 		$getProducts['showAll'] = $this->TalkToDb->get_products();	
-		$this->load->view('templates/footer');
-
+		
 		$quantity = $this->input->post("quantity"); 
 		$products_id = $this->input->post("products_id"); 
 
-				$newOrder = array(
-					'quantity' => $quantity,
-					'products_id' => $products_id
-				);
-		// var_dump($getProducts);
-		// var_dump($newOrder);
-		$this->session->set_userdata($newOrder);
-		$getProductsId['productById'] = $this->TalkToDb->products_id($products_id);
-		
-		$this->load->view('cart', $getProductsId);
+		$newOrder = array('quantity' => $quantity, 'products_id' => $products_id);
 
-		var_dump($getProductsId);
+		$getProductsId['products_id'] = $this->TalkToDb->products_id($products_id);
+
+		$getProductsId['cart'] = $this->TalkToDb->get_cart();
+
+		$toTheCart = $this->TalkToDb->store_cart($newOrder);
+
+		$this->load->view('cart', $getProductsId);
+		$this->load->view('templates/footer');
+
+		// var_dump($getProductsId);
 				
 		// die();	
 		// $store_cart = $this->TalkToDb->store_cart($newOrder);
 
 	}
+
+	public function delete()
+	{
+		$deletedOrder = $this->input->post("delete"); 
+
+		$this->load->model('TalkToDb');
+
+		$delete = $this->TalkToDb->delete($deletedOrder);
+		redirect('/main/cart/');
+	}
+
 	public function check_out()
 	{
 		$name = $this->input->post("name");
